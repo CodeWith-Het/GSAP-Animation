@@ -1,0 +1,61 @@
+/* Reset + base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  background: #111;
+  /* cursor: none; */
+}
+
+#main {
+  height: 100%;
+  width: 100%;
+  background-color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* position: relative; */
+}
+
+/* Custom cursor (white dot) */
+#cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #fff;
+  pointer-events: none; 
+  z-index: 9;
+  mix-blend-mode: difference;
+}
+
+#image {
+  height: 50vh;
+  width: 50vw;
+  position: relative;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+#image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Overlay (optional dark layer on top of image) */
+#overlay { /* NOTE: tumhare CSS me 'overlap' likha tha, yaha correct id 'overlay' hai */
+  position: absolute;
+  background: rgba(0,0,0,0.2);
+  z-index: 10;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  opacity: 0.5;  
+}
